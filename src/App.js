@@ -8,11 +8,13 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { store  } from './store';
 import Home from './Home';
-export default () =>(
+export default class App extends Component{ 
+  render(){
   <Provider store={store}>
     <Home />
   </Provider>
-)
+  }
+}
 
 
 

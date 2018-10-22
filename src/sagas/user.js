@@ -38,7 +38,7 @@ function* accountData1(action) {
 // watcher saga 
 export default function* mySaga() {
   try{
-  yield takeLatest(USER_API_1, userData1);
+  yield takeEvery(USER_API_1, userData1);
   yield takeEvery(ACC_API_1, accountData1);
   }catch(e){
     console.log('error in mysaga:::',e)
@@ -48,7 +48,7 @@ export default function* mySaga() {
 /*
   Alternatively you may use takeLatest.
 
-  Does not allow concurrent fetches of user. If "USER_FETCH_REQUESTED" gets
+  Does not allow concurrent fetches of user. If "USER_API_1" gets
   dispatched while a fetch is already pending, that pending fetch is cancelled
   and only the latest one will be run.
 */
